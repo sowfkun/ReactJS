@@ -1,0 +1,11 @@
+.TodoItem {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: white;
+}
+
+.Item-complete {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
