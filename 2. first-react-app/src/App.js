@@ -18,9 +18,12 @@ class App extends Component {
         {/* Change from array of string to array of component */}
         {
           // Add props key to identify item in list
-          this.todoItems.map((item, index) =>
+          this.todoItems.length > 0 && this.todoItems.map((item, index) =>
             <TodoItem key={index} item={item} />
           )
+        }
+        {
+          this.todoItems.length === 0 && 'Nothing to do'
         }
       </div>
     );
