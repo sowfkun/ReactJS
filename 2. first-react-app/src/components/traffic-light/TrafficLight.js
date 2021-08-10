@@ -11,7 +11,7 @@ class TrafficLight extends Component {
         this.currentColor = RED;
     }
 
-    getNextColor(Color) {
+    getNextColor(color) {
         switch(color){
             case GREEN:
                 return YELLOW;

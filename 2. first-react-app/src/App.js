@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import './App.css';
-import TodoItem from './components/TodoItem';
+import TodoItem from './components/todo-item/TodoItem';
+import TrafficLight from './components/traffic-light/TrafficLight';
 
 class App extends Component {
   constructor() {
-    super(); // inheritit from Component
+    super(); // inherit from Component
     this.todoItems = [
       { content: 'Shopping', isComplete: true },
       { content: 'Play soccer' },
@@ -25,6 +26,9 @@ class App extends Component {
         {
           this.todoItems.length === 0 && 'Nothing to do'
         }
+
+        {/** State exercise */}
+        <TrafficLight />
       </div>
     );
   }
