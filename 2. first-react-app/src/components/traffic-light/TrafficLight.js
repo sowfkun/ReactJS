@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
 import './TrafficLight.css';
+import classNames from 'classnames'
 
 const RED = 0;
 const YELLOW = 1;
 const GREEN = 2;
 
 class TrafficLight extends Component {
-    constructor() {
-        super();
-        this.currentColor = RED;
-    }
-
-    getNextColor(color) {
-        switch(color){
-            case GREEN:
-                return YELLOW;
-            case YELLOW:
-                return RED;
-            case RED:
-                return GREEN;
-            default:
-                return RED;
-        }
-    }
-
-    render(){
+    render() {
+        const { currentColor } = this.props;
         return <div className='TrafficLight'>
-            <div className='light red'/>
-            <div className='light yellow'/>
-            <div className='light green'/>
+            {/** Dynamic classname use classnames module */}
+            <div className={classNames('light', 'red', {
+                active: currentColor === RED
+            })} />
+            <div className={classNames('light', 'yellow', {
+                active: currentColor === YELLOW
+            })} />
+            <div className={classNames('light', 'green', {
+                active: currentColor === GREEN
+            })} />
         </div>
     }
 }
