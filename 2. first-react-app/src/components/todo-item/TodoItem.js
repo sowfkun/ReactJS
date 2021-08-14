@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import './TodoItem.css'
+import classNames from 'classnames'
+
+import checkImg from './check.png';
+import checkedImg from './checked.png';
+
 // classname is the same with filename
 class TodoItem extends Component {
+
     render() {
-        const { item } = this.props;
+        const { item, onClick } = this.props;
 
-        // Dynamic classname use if else
-        let className = 'TodoItem';
-        if (item.isComplete) {
-            className += ' Item-complete';
-        }
-
+        let src = item.isComplete ? checkedImg : checkImg;
         return (
-            <div className={className}>
-                <p>{this.props.item.content}</p>
+            // onclick event
+            <div className={classNames('TodoItem')}>
+                <img onClick={onClick} src={src} width='32px' height='32px' />
+                <p className={classNames({
+                    "Item-complete": item.isComplete
+                })}>{this.props.item.content}</p>
             </div>
         );
     }

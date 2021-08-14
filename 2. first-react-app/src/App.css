@@ -9,3 +9,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.List-items {
+  min-width: 500px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+ 
+}
