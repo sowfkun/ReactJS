@@ -12,9 +12,7 @@ class App extends Component {
     super(); // inherit from Component
 
     // data for todo list exercise
-    this.state = {
-
-    };
+    this.state = {};
 
     // state exercise (traffic light)
     this.state = {
@@ -22,13 +20,13 @@ class App extends Component {
       todoItems: [
         { content: 'Shopping', isComplete: true },
         { content: 'Play soccer' },
-        { content: 'Swimming' }
-      ]
-    }
+        { content: 'Swimming' },
+      ],
+    };
     setInterval(() => {
       this.setState({
-        currentColor: this.getNextColor(this.state.currentColor)
-      })
+        currentColor: this.getNextColor(this.state.currentColor),
+      });
     }, 1000);
   }
 
@@ -55,36 +53,34 @@ class App extends Component {
           ...todoItems.slice(0, index),
           {
             ...item,
-            isComplete: !isComplete
+            isComplete: !isComplete,
           },
-          ...todoItems.slice(index + 1)
-        ]
-      })
-    }
+          ...todoItems.slice(index + 1),
+        ],
+      });
+    };
   }
 
   render() {
     const { todoItems } = this.state;
     return (
-      <div className="App" >
-
+      <div className='App'>
         {/* Change from array of string to array of component */}
         <div className='List-items'>
           {
             // todo list exercise
             // Add props key to identify item in list
-            todoItems.length > 0 && todoItems.map((item, index) =>
-              <TodoItem
-                key={index}
-                item={item}
-                onClick={this.onItemClick(item, index)} />
-            )
+            todoItems.length > 0 &&
+              todoItems.map((item, index) => (
+                <TodoItem
+                  key={index}
+                  item={item}
+                  onClick={this.onItemClick(item, index)}
+                />
+              ))
           }
-          {
-            todoItems.length === 0 && 'Nothing to do'
-          }
+          {todoItems.length === 0 && 'Nothing to do'}
         </div>
-
 
         {/** State exercise */}
         <TrafficLight currentColor={this.state.currentColor} />
