@@ -17,3 +17,33 @@
   flex-direction: column;
  
 }
+
+.header {
+  min-width: 500px;
+  margin-bottom: 15px;
+ 
+}
+
+.Add-new {
+  width: 100%;
+  height: 30px;
+  border: dotted 1px red;
+  border-radius: 5px;
+  text-indent: 10px;
+}
+
+.Check-all-zone {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+.Check-all-zone p{
+  margin: 0;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.Check-all {
+  height: 15px;
+  width: 15px;
+}

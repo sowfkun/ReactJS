@@ -65,8 +65,21 @@ class App extends Component {
     const { todoItems } = this.state;
     return (
       <div className='App'>
+        <div className='header'>
+          <input
+            className='Add-new'
+            placeholder='Input new task'
+            type='text'
+          ></input>
+        </div>
+
         {/* Change from array of string to array of component */}
         <div className='List-items'>
+          <div className='Check-all-zone'>
+            <input type='checkbox' className='Check-all'></input>
+            <p>Check all</p>
+          </div>
+
           {
             // todo list exercise
             // Add props key to identify item in list
