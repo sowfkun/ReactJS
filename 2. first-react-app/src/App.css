@@ -15,13 +15,11 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
- 
 }
 
 .header {
   min-width: 500px;
   margin-bottom: 15px;
- 
 }
 
 .Add-new {
@@ -37,7 +35,7 @@
   flex-direction: row;
   margin-bottom: 5px;
 }
-.Check-all-zone p{
+.Check-all-zone p {
   margin: 0;
   font-size: 15px;
   margin-left: 10px;
@@ -46,4 +44,8 @@
 .Check-all {
   height: 15px;
   width: 15px;
+}
+
+.Exercise {
+  margin-bottom: 50px;
 }
