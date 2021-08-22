@@ -2,6 +2,8 @@ import { Component } from 'react';
 import './App.css';
 import TodoItem from './components/todo-item/TodoItem';
 import TrafficLight from './components/traffic-light/TrafficLight';
+import Accordion from './components/accordion/Accordion';
+import Ref from './components/ref/Ref';
 
 const RED = 0;
 const YELLOW = 1;
@@ -19,8 +21,8 @@ class App extends Component {
       currentColor: RED,
       todoItems: [
         { content: 'Shopping', isComplete: true },
-        { content: 'Play soccer' },
-        { content: 'Swimming' },
+        { content: 'Play soccer', isComplete: false },
+        { content: 'Swimming', isComplete: false },
       ],
     };
     setInterval(() => {
@@ -97,6 +99,14 @@ class App extends Component {
 
         {/** State exercise */}
         <TrafficLight currentColor={this.state.currentColor} />
+
+        {/** Props child exercise */}
+        <Accordion heading='heading' content='content use props'>
+          content use prop children
+        </Accordion>
+
+        {/** React Ref exercise */}
+        <Ref />
       </div>
     );
   }

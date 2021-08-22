@@ -27,14 +27,6 @@ class TrafficLight extends Component {
             active: currentColor === GREEN,
           })}
         />
-        <div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            earum, soluta assumenda, ab laborum iure mollitia unde veniamv svds
-            sdfsdf sdfsdf sfsdfs sdfdfs dignissimos dicta itaque, vero molestias
-            nemo et eaque sapiente est repudiandae doloremque.
-          </p>
-        </div>
       </div>
     );
   }
