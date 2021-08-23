@@ -51,7 +51,6 @@ class Counter extends Component {
   // return false mean parent update child will not update
   shouldComponentUpdate(nextProps, nextState) {
     // condition check when update and when not update
-    console.log(this.state.count, nextState);
     if (this.state.count === nextState.count) {
       return false;
     }

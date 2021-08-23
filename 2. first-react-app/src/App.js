@@ -69,6 +69,7 @@ class App extends Component {
   removeCounter() {
     this.setState({ showCounter: false });
   }
+
   render() {
     const { todoItems } = this.state;
     return (

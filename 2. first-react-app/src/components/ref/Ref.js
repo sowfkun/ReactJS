@@ -20,7 +20,9 @@ class Ref extends Component {
       <form ref={this.form}>
         <input type='text' placeholder='focus on load' ref={this.startInput} />
         <input type='text' placeholder='second input' />
-        <button onClick={this.onClick}>clear</button>
+        <button onClick={() => this.onClick()} type='button'>
+          clear
+        </button>
       </form>
     );
   }
