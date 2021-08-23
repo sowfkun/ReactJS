@@ -137,7 +137,7 @@ class App extends Component {
           <div className='Exercise'>
             <h2>Functional Stateless Component exercise</h2>
             <Card imgUrl='https://picsum.photos/200/300'>
-              <p>don't have state</p>
+              <p>don't have state </p>
               <p>props are argument of function</p>
               <p>don't have life cycle</p>
             </Card>
