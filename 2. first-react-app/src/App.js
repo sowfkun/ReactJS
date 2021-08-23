@@ -10,17 +10,12 @@ import Ref from './components/ref/Ref';
 import Counter from './components/life-cycle/Counter';
 import Bootstrap from './components/bootstrap/Bootstrap';
 
-const RED = 0;
-const YELLOW = 1;
-const GREEN = 2;
-
 class App extends Component {
   constructor() {
     super(); // inherit from Component
 
     // state exercise (traffic light)
     this.state = {
-      currentColor: RED,
       todoItems: [
         { content: 'Shopping', isComplete: true },
         { content: 'Play soccer', isComplete: false },
@@ -28,24 +23,6 @@ class App extends Component {
       ],
       showCounter: true,
     };
-    // setInterval(() => {
-    //   this.setState({
-    //     currentColor: this.getNextColor(this.state.currentColor),
-    //   });
-    // }, 1000);
-  }
-
-  getNextColor(color) {
-    switch (color) {
-      case GREEN:
-        return YELLOW;
-      case YELLOW:
-        return RED;
-      case RED:
-        return GREEN;
-      default:
-        return RED;
-    }
   }
 
   onItemClick(item, index) {
@@ -108,7 +85,7 @@ class App extends Component {
 
         {/** State exercise */}
         <div className='Exercise'>
-          <TrafficLight currentColor={this.state.currentColor} />
+          <TrafficLight />
         </div>
 
         {/** Props child exercise */}
