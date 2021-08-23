@@ -14,5 +14,5 @@ Default.args = {
   heading: 'Heading',
   content: 'Content',
   children: 'Child Content',
-  isCollapsed: true
+  isCollapsed: true,
 };
