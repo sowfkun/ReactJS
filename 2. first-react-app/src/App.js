@@ -11,6 +11,15 @@ import Ref from './components/ref/Ref';
 import Counter from './components/life-cycle/Counter';
 import Bootstrap from './components/bootstrap/Bootstrap';
 import Card from './components/functional-statless-component/Card';
+import HoverOpacity from './components/higher-order-component/HoverOpacity';
+import AwesomeImg from './components/higher-order-component/AwesomeImg';
+import withHoverOpacity from './components/higher-order-component/withHoverOpacity';
+import RenderProps from './components/render-props/RenderProps';
+import RenderPropsCounter from './components/render-props/RenderPropsCounter';
+
+// Component AwesomeImg is wrapped by other component use withHoverOpacity component
+// second param is opacity wanted
+const HigherOrderComponent = withHoverOpacity(AwesomeImg, 0.8);
 
 const Home = () => {
   return <h2>Home</h2>;
@@ -19,6 +28,8 @@ const Home = () => {
 const About = () => {
   return <h2>About</h2>;
 };
+
+const data = ['A', 'B', 'C'];
 
 class App extends Component {
   constructor() {
@@ -154,6 +165,30 @@ class App extends Component {
           </ul>
           <Route path='/' exact component={Home} />
           <Route path='/about' exact component={About} />
+
+          {/** Higher order components exercise */}
+          <div className='Exercise'>
+            <h2>Higher order Component exercise</h2>
+            <h4>Normal</h4>
+            <HoverOpacity>
+              <AwesomeImg src='https://picsum.photos/seed/picsum/200/300' />
+            </HoverOpacity>
+            <h4>use higher order component</h4>
+            <HigherOrderComponent src='https://picsum.photos/seed/picsum/200/300' />
+          </div>
+
+          {/** render props exercise */}
+          <div className='Exercise'>
+            <h2>render props exercise</h2>
+            <RenderProps data={data} render={(item) => <div>{item}</div>} />
+            <RenderProps data={data} render={(item) => <div>- {item}</div>} />
+            <RenderProps data={data} render={(item) => <div>+ {item}</div>} />
+
+            <h2>Counter example</h2>
+            <RenderPropsCounter render={(value) => <div>{value.count}</div>}>
+              {({ count }) => <div>{count}</div>}
+            </RenderPropsCounter>
+          </div>
         </div>
       </Router>
     );
