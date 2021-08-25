@@ -17,8 +17,10 @@ import withHoverOpacity from './components/higher-order-component/withHoverOpaci
 import RenderProps from './components/render-props/RenderProps';
 import RenderPropsCounter from './components/render-props/RenderPropsCounter';
 // provider consumer
-import NumberContext from './components/context-api/NumberContext';
-import NumberProvider from './components/context-api/NumberProvider';
+import { NumberProvider } from './components/context-api and useContext/NumberContext';
+import CounterFuncSetState from './components/functional-setstate/CounterFuncSetState';
+import CounterUseState from './components/hook-useState/CounterUseState';
+import RandomNumber from './components/context-api and useContext/RandomNumber';
 
 // Component AwesomeImg is wrapped by other component use withHoverOpacity component
 // second param is opacity wanted
@@ -148,7 +150,7 @@ class App extends Component {
               <Bootstrap buttonLabel='Modal' className='ModalTest' />
             </div>
 
-            {/** bootstrap exercise */}
+            {/** Functional Stateless Component exercise */}
             <div className='Exercise'>
               <h2>Functional Stateless Component exercise</h2>
               <Card imgUrl='https://picsum.photos/200/300'>
@@ -195,14 +197,22 @@ class App extends Component {
             </div>
 
             {/** context api exercise */}
-            <NumberContext.Consumer>
-              {({ number, updateNumber }) => (
-                <div>
-                  <h2>{number}</h2>
-                  <button onClick={updateNumber}>update Number</button>
-                </div>
-              )}
-            </NumberContext.Consumer>
+            <div className='Exercise'>
+              <h2>context api exercise</h2>
+              <RandomNumber />
+            </div>
+
+            {/** Functional setState exercise */}
+            <div className='Exercise'>
+              <h2>Functional setState exercise</h2>
+              <CounterFuncSetState />
+            </div>
+
+            {/** Functional setState exercise */}
+            <div className='Exercise'>
+              <h2>useState exercise</h2>
+              <CounterUseState />
+            </div>
           </div>
         </NumberProvider>
       </Router>

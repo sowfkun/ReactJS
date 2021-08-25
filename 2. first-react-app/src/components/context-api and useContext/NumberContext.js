@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import NumberContext from './NumberContext';
+export const NumberContext = React.createContext();
 
-export default class extends Component {
+export class NumberProvider extends Component {
   constructor() {
     super();
     this.state = {
