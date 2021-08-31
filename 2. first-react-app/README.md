@@ -6,7 +6,7 @@
 
 2. Install dependencies
 
-- npm install reactstrap bootstrap classnames prop-types react-router-dom
+- npm install reactstrap bootstrap classnames prop-types react-router-dom dotenv
 
 3. import bootstrap if needed
 
